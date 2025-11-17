@@ -1,0 +1,274 @@
+/* Global reset: apply box-sizing, base font, remove default margin/padding */
+ * { 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+    margin:0; 
+    padding:0; 
+}
+
+/* Body layout: full height flex container with white background */
+body { 
+    display:flex; 
+    min-height:100vh; 
+    background:#fff; 
+}
+
+/* Sidebar container: fixed width column with pink background */
+.sidebar {
+    width:250px;
+    background:#f8b8c4;
+    padding:30px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* Logo area in sidebar */
+.logo { 
+    text-align:center; 
+    margin-bottom:30px; 
+}
+
+/* Logo image sizing */
+.logo img { 
+    width:150px; 
+}
+
+/* Vertical navigation list in sidebar */
+.nav { 
+    display:flex; 
+    flex-direction:column; 
+    gap:18px; 
+}
+
+/* Navigation links: styling + hover/active behavior */
+.nav a { 
+    text-decoration:none; 
+    color:#000; 
+    font-weight:600; 
+    padding:8px 10px; 
+    border-radius:8px; 
+    display:flex; 
+    align-items:center; 
+    gap:10px; 
+    transition:0.2s; 
+}
+
+/* Active and hover states: white background highlight */
+.nav a.active, .nav a:hover { 
+    background:#fff; 
+}
+
+/* Icon sizing inside navigation links */
+.nav a .material-icons { 
+    font-size:22px; 
+}
+
+/* Logout link styling at bottom of sidebar */
+.logout a { 
+    text-decoration:none; 
+    color:#000; 
+    font-weight:700; 
+    display:block; 
+    text-align:center; 
+    padding:10px 0; 
+}
+
+/* Main content wrapper: fills remaining space */
+.main { 
+    flex:1; 
+    padding:50px 70px; 
+}
+
+/* Card container for form/content */
+.card { 
+    background:#fff; 
+    padding:20px; 
+    border-radius:12px; 
+    max-width:700px; 
+}
+
+/* Heading spacing */
+h2 { 
+    margin-bottom:14px; 
+}
+
+/* Label styling for form fields */
+label { 
+    font-weight:600; 
+    display:block; 
+    margin:10px 0 6px; 
+}
+
+/* Text inputs, number inputs, textarea, and select fields styling */
+input[type="text"], input[type="number"], textarea, select {
+    width:100%; 
+    padding:12px; 
+    border-radius:8px; 
+    border:none; 
+    background:#f8b7c3; 
+    margin-bottom:10px;
+}
+
+/* Textarea size and resize behavior */
+textarea { 
+    min-height:100px; 
+    resize:vertical; 
+}
+
+/* Button group: display buttons in a row with spacing */
+.buttons { 
+    display:flex; 
+    gap:10px; 
+    margin-top:12px; 
+}
+
+/* Primary button styling */
+button { 
+    background:#000; 
+    color:#fff; 
+    padding:10px 16px; 
+    border-radius:8px; 
+    border:none; 
+    font-weight:700; 
+    cursor:pointer; 
+}
+
+/* Primary button hover effect */
+button:hover { 
+    background: #b5b5b5ff; 
+    color:black; 
+}
+
+/* Secondary "Cancel" button styling */
+.btn-cancel { 
+    background:#fff; 
+    color:#000; 
+    border:2px solid #000; 
+    padding:10px 14px; 
+    border-radius:8px; 
+    text-decoration:none; 
+    display:inline-block; 
+}
+
+/* Cancel button hover effect */
+.btn-cancel:hover { 
+    background:black; 
+    color:white; 
+    border:2px;
+}
+
+/* Flash message base styling */
+.flash { 
+    margin-bottom:12px; 
+    padding:10px; 
+    border-radius:8px; 
+}
+
+/* Success message coloring */
+.flash.success { 
+    background:#d4edda; 
+    color:#155724; 
+}
+
+/* Error message coloring */
+.flash.error { 
+    background:#f8d7da; 
+    color:#721c24; 
+}
+
+/* Responsive styles for screens 768px wide or smaller */
+@media (max-width: 768px) {
+
+    /* Stack layout vertically on small screens */
+    body {
+        flex-direction: column;
+    }
+
+    /* Sidebar stays visible & fixed */
+    .sidebar {
+        width: 135px;
+        padding: 33px 1px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #f8b8c4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1000;
+    }
+
+    /* Smaller logo for mobile */
+    .logo img {
+        width: 86px;
+    }
+
+    /* Compact navigation list on mobile */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    /* Smaller nav link font size */
+    .nav a {
+        font-size: 10px;
+    }
+
+    /* Smaller icons on mobile */
+    .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    /* Smaller logout text */
+    .logout a {
+        font-size: 10px;
+    }
+
+    /* Main content adjusts next to sidebar */
+    .main {
+        margin-left: 140px;
+        padding: 20px;
+    }
+
+    /* Card fills full width on small screens */
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Smaller heading and centered text on mobile */
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Smaller labels for mobile */
+    label {
+        font-size: 13px;
+    }
+
+    /* Adjust input font size and padding */
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .buttons {
+        flex-direction: column;
+    }
+
+    /* Make buttons full width on mobile */
+    button,
+    .btn-cancel {
+        width: 100%;
+        text-align: center;
+    }
+}

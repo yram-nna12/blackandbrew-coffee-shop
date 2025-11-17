@@ -1,0 +1,365 @@
+/* Body styling: remove margin, apply background image, global font */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url("../img/RegistrationPage.png") no-repeat center center/cover;
+  min-height: 100vh;
+  color: #1f1f1f;
+}
+
+/* ---------------- NAVIGATION BAR ---------------- */
+/* Fixed black navbar with spaced items */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1px 250px;
+  background: #000; color: #fff;
+  box-sizing: border-box; overflow-x: hidden;
+}
+
+/* Navigation groups on left and right */
+.nav-left, .nav-right { 
+  display: flex; 
+  gap: 40px; 
+}
+
+/* Navigation links */
+nav a {
+  color: #f7c9d5;   /* default pink */
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+/* Hover effect */
+nav a:hover { 
+  color: #fff; 
+}
+
+/* Active nav element (current page) */
+nav a.active {
+  color: #fff;
+  cursor: default;
+}
+
+/* Logo image */
+.logo img { 
+  height: 80px; 
+}
+
+/* Logo hover: invert + slight zoom */
+.logo:hover img { 
+  filter: brightness(0) invert(1); 
+  transform: scale(1.05); 
+}
+
+/* Profile icon with no invert filter by default */
+.profile-icon img {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  filter: none;
+}
+
+/* Profile icon hover invert */
+.profile-icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------------- CONTACT SECTION ---------------- */
+/* Wrapper for entire contact area */
+.contact-wrapper { 
+  min-height: 70vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 20px 50px; /* space for fixed nav */
+}
+
+/* Inner layout container */
+.contact-inner {
+  display: flex; 
+  flex-wrap: wrap;
+  max-width: 1300px; 
+  width: 100%;
+  justify-content: space-between; 
+  gap: 70px;
+  margin-top: 80px;
+}
+
+/* Left side info block */
+.left-pane { 
+  flex: 1; 
+  min-width: 300px; 
+}
+
+/* Title styling */
+.left-pane h1 { 
+  font-weight: 800; 
+  font-size: 2.5rem; 
+  margin-bottom: 10px; 
+}
+
+/* Paragraph spacing */
+.left-pane p { 
+  margin: 0 0 50px; 
+}
+
+/* Contact details list */
+.left-pane ul { 
+  list-style: none; 
+  padding: 0; 
+  margin-top: 25px; 
+}
+
+/* Contact info rows */
+.left-pane li {
+  display: flex; align-items: center;
+  margin: 12px 0; 
+  font-size: 1.1rem; 
+  gap: 10px;
+}
+
+/* Contact icons */
+.left-pane .material-icons {
+  font-size: 26px;
+  color: #000;
+  line-height: 1;
+}
+
+/* ---------------- RIGHT SIDE FORM ---------------- */
+/* Form container */
+.right-pane {
+  flex: 1.2;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* Text inputs + textarea */
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Textarea height */
+.contact-form textarea { 
+  resize: none; 
+  height: 120px; 
+}
+
+/* Input focus effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #000;
+}
+
+/* Submit button */
+.btn-send {
+  font-family: 'Poppins', sans-serif;
+  background: #000; color: #fff;
+  border: none; padding: 12px 35px;
+  border-radius: 10px; font-weight: 700;
+  cursor: pointer; transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Submit button hover */
+.btn-send:hover { 
+  opacity: 0.85;
+  background: #ffffffff; 
+  color: #000000ff; 
+}
+
+/* Screen-reader only text */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0; white-space: nowrap;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  background-color: #000;
+  color: #f4aec5;
+  font-family: 'Poppins', sans-serif;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 2rem 4rem; 
+  flex-wrap: wrap; 
+  text-align: center;
+}
+
+/* Footer left label */
+.footer-left h4 { 
+  font-size: 0.9rem; 
+  letter-spacing: 1px; 
+  margin-bottom: 0.8rem; 
+}
+
+/* Social icons */
+.social-icons a {
+  color: #f4aec5;  
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+/* Social hover */
+.social-icons a:hover { 
+  color: #fff; 
+}
+
+/* Footer center section */
+.footer-center { 
+  text-align: center; 
+}
+
+/* Footer logo */
+.footer-logo { 
+  height: 100px; 
+  width: 100px; 
+  margin-bottom: -2rem; 
+}
+
+/* Footer rights text */
+.footer-center p { 
+  font-size: 0.65rem; 
+  margin-top: 0.3rem; 
+}
+
+/* Footer right links */
+.footer-right a {
+  color: #f4aec5; 
+  text-decoration: none;
+  margin-left: 1.2rem; 
+  font-weight: 600;
+  font-size: 0.9rem; 
+  transition: color 0.3s;
+}
+
+/* Footer right hover */
+.footer-right a:hover { 
+  color: #fff; 
+}
+
+/* Optional material icon styling */
+.footer .material-icons { 
+  color: #f4aec5; 
+  vertical-align: middle; 
+}
+
+
+
+/* ---------------------- MOBILE RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+
+  /* Smaller nav text */
+  nav a {
+    font-size: 11px;
+  }
+
+  /* Reduce nav padding */
+  nav {
+    padding: 10px 30px;
+  }
+
+  /* Left-pane spacing adjustments */
+  .left-pane ul {
+    margin-top: 15px;
+  }
+
+  .left-pane li {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1rem;
+    gap: 5px;
+  }
+
+  /* Reduce nav group spacing */
+  .nav-left, .nav-right {
+    gap: 15px;
+  }
+
+  /* Smaller logo */
+  .logo img {
+    height: 55px;
+  }
+
+  /* Contact wrapper spacing */
+  .contact-wrapper {
+    padding: 30px 50px 40px;
+  }
+
+  /* Stack contact inner vertically */
+  .contact-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Smaller left title */
+  .left-pane h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Slim right pane */
+  .right-pane {
+    padding: 5px;
+  }
+
+  /* Footer condensed layout */
+  .footer {
+    flex-wrap: nowrap;   
+    padding: 1rem 3rem;
+  }
+
+  /* Footer right links */
+  .footer-right a {
+    margin: 0.6rem 0.7rem;
+  }
+
+  /* Smaller footer left header */
+  .footer-left h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Smaller social icons */
+  .social-icons a {
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+  }
+
+  /* Smaller middle logo */
+  .footer-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  /* Center block tweak */
+  .footer-center {
+    margin-left: 1rem;
+  }
+
+  /* Smaller rights text */
+  .footer-center p {
+    font-size: 0.45rem;
+    margin-top: 0.7rem;
+  }
+
+  /* Smaller footer nav links */
+  .footer-right a {
+    margin-left: -0.5rem;
+    font-size: 0.6rem;
+  }
+}

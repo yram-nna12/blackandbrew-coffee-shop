@@ -1,0 +1,295 @@
+/* Global reset for spacing, sizing, and font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Base layout: sidebar + main content */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* --------------------- SIDEBAR --------------------- */
+.sidebar {
+    width: 250px;
+    background: #f8b8c4;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+/* Logo at top of sidebar */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Navigation links inside sidebar */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Highlight for active or hovered nav item */
+.nav a.active,
+.nav a:hover {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Logout link styling */
+.logout {
+    padding: 20px 60px;
+}
+
+.logout a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+}
+
+.logout a:hover {
+    color: #ffffff;
+}
+
+/* --------------------- MAIN CONTENT --------------------- */
+.main { 
+    flex: 1;
+    padding: 40px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8b8c4;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    font-weight: normal;
+}
+
+td {
+    font-weight: 700;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Actions column (edit/delete buttons) */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Icons for actions */
+.material-symbols-outlined {
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Hover effect for icons */
+.material-symbols-outlined:hover {
+    color: #ffffffff;
+}
+
+/* --------------------- PAGINATION --------------------- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.pagination li a:hover {
+    background-color: #fff;
+}
+
+.pagination li.active a,
+.pagination li.active span {
+    background: #000;
+    color: #fff;
+}
+
+/* Page heading */
+.header-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* --------------------- RESPONSIVE (≤768px) --------------------- */
+@media (max-width: 768px) {
+
+    /* Sidebar shrinks and becomes fixed */
+    .sidebar {
+        width: 135px;
+        padding: 33px 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #f8b8c4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1000;
+    }
+
+    .logo img {
+        width: 86px;
+    }
+
+    .nav {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .nav a {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .logout {
+        padding: 0 30px;
+    }
+
+    .logout a {
+        font-size: 10px;
+    }
+
+    /* Main moves to the right since sidebar is fixed */
+    .main {
+        margin-left: 9rem;
+        padding: 27px 30px;
+    }
+
+    .header-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Transform table into stacked cards */
+    table {
+        background: transparent;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Mobile card container */
+    tr {
+        background: #f8b8c4;
+        margin-bottom: 18px;
+        padding: 18px;
+        border-radius: 14px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+    /* Table cells become text blocks */
+    td {
+        padding: 8px 10px;
+        border: none;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    /* Show column label above value */
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #333;
+        display: block;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    /* Actions moved to top right of card */
+    .actions {
+        position: absolute;
+        top: 16px;
+        right: -246px;
+        display: flex;
+    }
+
+    .actions .material-symbols-outlined {
+        font-size: 20px;
+        background: #fff;
+        padding: 6px;
+        border-radius: 6px;
+    }
+
+    .actions .material-symbols-outlined:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    /* Pagination shrinks */
+    .pagination {
+        gap: 6px;
+        margin-top: 20px;
+    }
+
+    .pagination li a,
+    .pagination li span {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+}

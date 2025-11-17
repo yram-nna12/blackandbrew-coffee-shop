@@ -1,0 +1,357 @@
+/* Global reset: remove default spacing + unify box model + set font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body: full background image + vertical layout */
+body {
+  background: url("../img/RegistrationPage.png") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000;
+}
+
+/* ---------------- NAVIGATION BAR ---------------- */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1px 250px;
+  background: #000;
+  color: #fff;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Nav left/right container spacing */
+.nav-left, .nav-right {
+  display: flex;
+  gap: 40px;
+}
+
+/* Nav links */
+nav a {
+  color: #f7c9d5;
+  text-decoration: none;
+  font-size: 15px;
+  transition: .3s;
+  font-weight: 600;
+}
+
+/* Hover state turns text white */
+nav a:hover {
+  color: #fff;
+}
+
+/* Logo image */
+.logo img {
+  height: 80px;
+}
+
+/* Logo hover: invert + scale */
+.logo:hover img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.05);
+}
+
+/* Profile icon image */
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------------- PROFILE SECTION ---------------- */
+.profile-container {
+  margin: 180px auto 80px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 950px;
+}
+
+/* Page title */
+.profile-container h1 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.profile-container h1 span {
+  color: #fff;
+}
+
+/* Section divider line */
+.profile-container hr {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  margin: 20px 0;
+}
+
+/* Section heading */
+.profile-container h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* Form row with two inputs */
+.form-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Input column inside each row */
+.form-group div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels for each field */
+label {
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Text/email/password fields */
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+/* Main Save + Logout buttons */
+.save-btn, .logout-btn {
+  background-color: #000000ff;
+  color: #f4aec5;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Save hover: invert colors */
+.save-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Logout button = outlined style */
+.logout-btn {
+  background-color: transparent;
+  border: 2px solid #000000ff;
+  color: #000000ff;
+}
+
+/* Logout hover */
+.logout-btn:hover {
+  border: none;
+  background-color: #ffffffff;
+  color: #f4aec5;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  background-color: #000;
+  color: #f4aec5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Left footer section title */
+.footer-left h4 {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+/* Social icons */
+.social-icons a {
+  color: #f4aec5;
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+/* Footer center section */
+.footer-center {
+  text-align: center;
+}
+
+/* Center logo */
+.footer-logo {
+  height: 100px;
+  width: 100px;
+  margin-bottom: -2rem;
+}
+
+/* Footer text */
+.footer-center p {
+  font-size: 0.65rem;
+  margin-top: 0.3rem;
+}
+
+/* Footer right links */
+.footer-right a {
+  color: #f4aec5;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+/* ---------------- RESPONSIVE (≤768px) ---------------- */
+@media (max-width: 768px) {
+
+  /* Nav adjustments */
+  nav a {
+    font-size: 11px;
+  }
+
+  nav {
+    padding: 10px 30px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 15px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  /* Profile container shrinks */
+  .profile-container {
+    width: 75%;
+    margin: 130px auto 50px;
+  }
+
+  .profile-container h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .profile-container hr {
+    margin: 10px 0;
+  }
+
+  .profile-container h3 {
+    font-size: 16px;
+  }
+
+  /* Form fields stack */
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group div {
+    width: 95%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 10px;
+    padding: 12px;
+  }
+
+  /* Buttons shrink */
+  .button-group {
+    gap: 12px;
+  }
+
+  .save-btn,
+  .logout-btn {
+    width: 30%;
+    text-align: center;
+    font-size: 10px;
+    margin-top: -5px;
+  }
+
+  /* Footer compact mode */
+  .footer {
+    flex-wrap: nowrap;
+    padding: 1rem 3rem;
+  }
+
+  .footer-right a {
+    margin: 0.6rem 0.7rem;
+  }
+
+  .footer-left h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6rem;
+  }
+
+  .social-icons a {
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+  }
+
+  .footer-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .footer-center {
+    margin-left: 1rem;
+  }
+
+  .footer-center p {
+    font-size: 0.45rem;
+    margin-top: 0.7rem;
+  }
+
+  .footer-right a {
+    margin-left: -0.5rem;
+    font-size: 0.6rem;
+  }
+}

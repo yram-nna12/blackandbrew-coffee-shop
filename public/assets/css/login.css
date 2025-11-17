@@ -1,0 +1,154 @@
+/* Body: full-screen centered form over fixed background image */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url("../img/RegistrationPage.png") no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Wrapper for the form card */
+.form-container {
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Main heading */
+h1 {
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+/* Subtitle under heading */
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    color: #333;
+}
+
+/* Group for each label + input pair */
+.input-group {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+/* Field labels */
+label {
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+/* Text inputs */
+input {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Submit button */
+.btn {
+    background: #000;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Button hover: invert colors with smooth transition */
+.btn:hover {
+    background: #ffffffff; 
+    color: #000000ff;
+    transition: 0.25s ease-in-out;
+}
+
+/* Error message box */
+.error {
+    background: rgba(255, 0, 0, 0.12);
+    color: #c30000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* "Already have an account?" text */
+.login-text {
+    margin-top: 25px;
+}
+
+/* Login link styling */
+.login-text a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Login link hover: remove underline and invert color */
+.login-text a:hover {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.25s ease-in-out;
+}
+
+/* ========== RESPONSIVE: TABLET / MOBILE ========== */
+@media (max-width: 768px) {
+
+    /* Form container shrinks on small screens */
+    .form-container {
+        width: 90%;
+        max-width: 360px;
+        padding: 25px 20px;
+    }
+
+    /* Smaller heading */
+    h1 {
+        font-size: 28px;
+    }
+
+    /* Smaller subtitle + reduced spacing */
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    /* Smaller inputs */
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Smaller button */
+    .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Smaller login text */
+    .login-text {
+        font-size: 12px;
+    }
+}

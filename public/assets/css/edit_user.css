@@ -1,0 +1,274 @@
+/* Global reset: clears default spacing + sets universal font + box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Base layout: sidebar + main content */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+    width: 250px;
+    background: #f8b8c4;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+/* Logo container */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Navigation menu links */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+/* Sidebar links styling */
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Highlight hovered or active menu item */
+.nav a.active,
+.nav a:hover {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Logout area */
+.logout {
+    padding: 20px 60px;
+}
+
+.logout a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+}
+
+.logout a:hover {
+    color: #ffffff;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+.main {
+    flex: 1;
+    padding: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page heading */
+.header-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+/* Limit form width */
+form {
+    max-width: 500px;
+}
+
+/* Hide labels (placeholder-only UI) */
+label {
+    display: none;
+}
+
+/* Text + Email input fields */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #f8b8c4;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Placeholder text styling */
+input::placeholder {
+    color: #555;
+    opacity: 0.9;
+}
+
+/* Button wrapper */
+.buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 1px;
+}
+
+/* Base button / cancel button shared styling */
+button,
+a.btn-cancel {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Save button */
+button {
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+/* Save button hover */
+button:hover {
+    background: #333;
+}
+
+/* Cancel button */
+a.btn-cancel {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+/* Cancel hover */
+a.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+/* Flash message base */
+.flash {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Flash success */
+.flash.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* Flash error */
+.flash.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ---------------- RESPONSIVE DESIGN (≤768px) ---------------- */
+@media (max-width: 768px) {
+
+    /* Sidebar shrinks for mobile */
+    .sidebar {
+        width: 135px;
+        padding: 33px 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #f8b8c4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1000;
+    }
+
+    /* Smaller logo */
+    .logo img {
+        width: 86px;
+    }
+
+    /* Smaller nav spacing */
+    .nav {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    /* Smaller nav links */
+    .nav a {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    /* Compact logout area */
+    .logout {
+        padding: 0 30px;
+    }
+
+    .logout a {
+        font-size: 10px;
+    }
+
+    /* Main content moves right from fixed sidebar */
+    .main {
+        margin-left: 8rem;
+        padding: 43px 47px;
+    }
+
+    /* Smaller heading */
+    .header-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    /* Form stretches full width */
+    form {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Smaller text inputs */
+    input[type="text"],
+    input[type="email"] {
+        font-size: 13px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Button layout stacks vertically */
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button,
+    a.btn-cancel {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 13px;
+    }
+}

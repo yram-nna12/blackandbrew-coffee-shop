@@ -1,0 +1,245 @@
+/* Global reset: removes default spacing, sets box sizing, and applies font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Base layout: flex container to hold sidebar + main */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #f8b8c4;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+/* Logo container */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Logo image size */
+.logo img {
+    width: 150px;
+}
+
+/* Navigation menu list */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+/* Navigation links */
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Active & hover effect */
+.nav a.active,
+.nav a:hover {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Logout section styling */
+.logout {
+    padding: 20px 60px;
+}
+
+/* Logout link */
+.logout a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Logout hover effect */
+.logout a:hover {
+    color: #ffffff;
+}
+
+/* MAIN CONTENT */
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Dashboard title */
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+/* Income summary container */
+.income-box {
+    background: #f8b8c4;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* Income label */
+.income-box h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Large income amount */
+.income-amount {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Summary card container */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Individual statistic card */
+.card {
+    flex: 1;
+    min-width: 280px;
+    background: #f8b8c4;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+/* Card title */
+.card h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Card value text */
+.card p {
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Icon size */
+.material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* RESPONSIVE STYLES: MOBILE VIEW */
+@media (max-width: 768px) {
+
+    /* Smaller sidebar */
+    .sidebar {
+        width: 135px;
+        padding: 33px 1px;
+    }
+
+    /* Smaller logo */
+    .logo img {
+        width: 86px;
+    }
+
+    /* Adjust nav spacing on mobile */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    /* Smaller nav text */
+    .nav a {
+        font-size: 10px;
+    }
+
+    /* Smaller icons */
+    .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    /* Smaller logout text */
+    .logout a {
+        font-size: 10px;
+    }
+
+    /* Adjust logout position */
+    .logout {
+        padding: 0px 40px;
+    }
+
+    /* Reduce main padding */
+    .main {
+        padding: 25px;
+    }
+
+    /* Smaller page title */
+    h1 {
+        font-size: 25px;
+    }
+
+    /* Adjust income summary for small screens */
+    .income-box {
+        padding: 6px 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .income-box h2 {
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    /* Smaller income amount */
+    .income-amount {
+        font-size: 20px;
+        margin-top: -2px;
+    }
+
+    /* Stack cards vertically */
+    .cards {
+        flex-direction: column;
+    }
+
+    /* Smaller card styling */
+    .card {
+        padding: 3px 20px;
+        min-width: 80px;
+        border-radius: 8px;
+    }
+
+    /* Smaller card number */
+    .card p {
+        font-size: 18px;
+        margin-top: -2px;
+    }
+
+    /* Smaller card title */
+    .card h3 {
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
