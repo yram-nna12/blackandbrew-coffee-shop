@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="./public/assets/img/logoB&B.png" alt="Black & Brew" width="140" height="140">
+    <img src="./public/assets/img/logom.png" alt="Black & Brew" width="140" height="140">
   </a>
   <h3 align="center">Black & Brew Coffee Shop Web System</h3>
 </div>
